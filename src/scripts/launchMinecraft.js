@@ -1,6 +1,4 @@
-import getUser from "./getUserInfo";
-
-async function launchMinecraft(user, setUser) {
+async function launchMinecraft(user) {
     const data = window.require("/Users/danilpalienko/Sites/localhost/minecraftrevolution/minecraftrevolution.client/1.16.5.json");
     const path = window.require("path");
     const fs = window.require("fs");

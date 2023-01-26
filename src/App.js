@@ -41,7 +41,7 @@ function App() {
                 <BrowserRouter>
                     <div className="h-screen flex text-text">
                         <div className="bg-background-front h-full text-white font-medium flex flex-col justify-between h-full p-2">
-                            <NavigationBar user={user} setUser={setUser}/>
+                            <NavigationBar user={user}/>
                         </div>
                         <div className="bg-background-back flex w-full flex-col justify-between h-full p-5">
                                 <Routes>

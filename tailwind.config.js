@@ -14,7 +14,7 @@ module.exports = {
       'buttons':{
         'decline': "#FFD4D4",
         'accept': "#d8dea2",
-        'normal': "#A8D1D1",
+        'normal': "#d4d19e",
       },
       'text': '#353535',
     },

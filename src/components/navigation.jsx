@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import launchMinecraft from "./../scripts/launchMinecraft";
 
-const NavigationBar = ({ user, setUser }) => {
+const NavigationBar = ({ user }) => {
     const { ipcRenderer } = window.require("electron");
 
     const handleClose = () => {
@@ -11,7 +11,7 @@ const NavigationBar = ({ user, setUser }) => {
     };
 
     const handlePlay = () => {
-        launchMinecraft(user, setUser);
+        launchMinecraft(user);
     };
 
     return (
