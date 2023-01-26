@@ -2,6 +2,7 @@
   "name": "minecraftrevolution.client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "main": "src/electron-starter.js",
   "displayName": "Minecraft Revolution",
   "dependencies": {
@@ -16,11 +17,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "PORT=3006 react-scripts start",
+    "start": "PORT=3006 BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron": "electron ."
+    "electron": "electron .",
+    "dev" : "nf start"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +44,7 @@
   },
   "devDependencies": {
     "electron": "^22.1.0",
+    "foreman": "^3.0.1",
     "tailwindcss": "^3.2.4"
   }
 }

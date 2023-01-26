@@ -30,8 +30,14 @@ function createWindow() {
 
     mainWindow.resizable = false;
 
+    const startUrl = process.env.ELECTRON_START_URL || url.format({
+        pathname: path.join(__dirname, '/../build/index.html'),
+        protocol: 'file:',
+        slashes: true
+    });
+
     // and load the index.html of the app.
-    mainWindow.loadURL("http://localhost:3006");
+    mainWindow.loadURL(startUrl);
 
     // Open the DevTools.
     mainWindow.webContents.openDevTools();
