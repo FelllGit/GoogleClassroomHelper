@@ -15,7 +15,7 @@ const NavigationBar = ({ user, setUser }) => {
     };
 
     return (
-        <div className="text-white font-medium flex flex-col justify-between h-full mx-2">
+        <>
             <div>
                 <Link to={"/"}>
                     <button className="block w-full bg-buttons-normal hover:bg-gray-700 text-white py-2 px-4 rounded-lg my-2">
@@ -33,16 +33,18 @@ const NavigationBar = ({ user, setUser }) => {
                     onClick={handlePlay}>
                     Сервер 1
                 </button>
-                <button className="block w-full bg-buttons-normal hover:bg-gray-700 text-white py-2 px-4 rounded-lg my-2">
-                    Сервер 2
-                </button>
+                <Link to={"/techno"}>
+                    <button className="block w-full bg-buttons-normal hover:bg-gray-700 text-white py-2 px-4 rounded-lg my-2">
+                        Сервер 2
+                    </button>
+                </Link>
             </div>
             <button
                 className="w-full bg-buttons-decline text-white py-2 px-4 rounded-lg my-2"
                 onClick={handleClose}>
                 Вийти
             </button>
-        </div>
+        </>
     );
 };
 

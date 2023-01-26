@@ -8,8 +8,8 @@ module.exports = {
     extend: {},
     colors: {
       'background': {
-        'back': '#bbbde0',
-        'front': '#9ea1d4',
+        'back': '#8e90be',
+        'front': '#9EA1D4',
       },
       'buttons':{
         'decline': "#FFD4D4",
