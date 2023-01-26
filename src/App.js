@@ -8,6 +8,7 @@ import getUser from "./scripts/getUserInfo";
 import NavigationBar from "./components/navigation";
 
 import Main from "./pages/main";
+import Settings from "./pages/settings";
 
 import Login from "./pages/login";
 
@@ -29,6 +30,7 @@ function App() {
                             <div>
                                 <Routes>
                                     <Route exact path="/" element={<Main />} />
+                                    <Route exact path="/settings" element={<Settings />} />
                                 </Routes>
                             </div>
                         </div>

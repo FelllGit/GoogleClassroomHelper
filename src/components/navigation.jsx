@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import launchMinecraft from "./../scripts/launchMinecraft";
 
-const NavigationBar = ({user, setUser}) => {
+const NavigationBar = ({ user, setUser }) => {
     const { ipcRenderer } = window.require("electron");
 
     const handleClose = () => {
@@ -12,17 +12,21 @@ const NavigationBar = ({user, setUser}) => {
 
     const handlePlay = () => {
         launchMinecraft(user, setUser);
-    }
+    };
 
     return (
         <div className="text-white font-medium flex flex-col justify-between h-full mx-2">
             <div>
-                <button className="block w-full bg-buttons-normal hover:bg-gray-700 text-white py-2 px-4 rounded-lg my-2">
-                    Головна
-                </button>
-                <button className="block w-full bg-buttons-normal hover:bg-gray-700 text-white py-2 px-4 rounded-lg my-2">
-                    Налаштування
-                </button>
+                <Link to={"/"}>
+                    <button className="block w-full bg-buttons-normal hover:bg-gray-700 text-white py-2 px-4 rounded-lg my-2">
+                        Головна
+                    </button>
+                </Link>
+                <Link to={"/settings"}>
+                    <button className="block w-full bg-buttons-normal hover:bg-gray-700 text-white py-2 px-4 rounded-lg my-2">
+                        Налаштування
+                    </button>
+                </Link>
                 <hr className="my-2 w-full" />
                 <button
                     className="block w-full bg-buttons-normal hover:bg-gray-700 text-white py-2 px-4 rounded-lg my-2"
