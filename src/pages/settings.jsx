@@ -1,14 +1,19 @@
-import { React, useEffect } from 'react';
+import { React, useEffect } from "react";
 
-const Settings = () => {
+const Settings = ({ pc }) => {
     useEffect(() => {
-        document.title = 'Minecraft Revolution | Settings';
-      }, []);
-  return (
-    <div>
-      <h1>Hello, World!</h1>
-    </div>
-  );
+        document.title = "Minecraft Revolution | Settings";
+    }, []);
+    return (
+        <>
+            <div>
+                <p>Operating System: {pc.os}</p>
+                <p>Processor: {pc.cpu}</p>
+                <p>Processor Architecture: {pc.architecture}</p>
+                <p>Total Memory: {pc.memory}</p>
+            </div>
+        </>
+    );
 };
 
 export default Settings;

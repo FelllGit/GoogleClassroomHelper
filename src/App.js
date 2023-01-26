@@ -14,11 +14,27 @@ import TechnoServerPage from "./pages/Techno";
 import Login from "./pages/login";
 
 function App() {
+    const os = window.require("os");
+
     //localStorage.removeItem("token");
+
+    //setUserAccInfo
     const [user, setUser] = useState(null);
     useEffect(() => {
         getUser([setUser]);
     }, []);
+
+    //setUserPCInfo
+    const [pc, setInfo] = useState({});
+    useEffect(() => {
+    setInfo({
+    os: os.type(),
+    cpu: os.cpus()[0].model,
+    architecture: os.arch(),
+    memory: Math.round(os.totalmem() / 1073741824),
+    });
+    }, []);
+
     return (
         <>
             {user ? (
@@ -30,7 +46,7 @@ function App() {
                         <div className="bg-background-back flex w-full flex-col justify-between h-full p-5">
                                 <Routes>
                                     <Route exact path="/" element={<Main />} />
-                                    <Route path="/settings" element={<Settings />} />
+                                    <Route path="/settings" element={<Settings pc={pc}/>} />
                                     <Route path="/techno" element={<TechnoServerPage />} />
                                 </Routes>
                         </div>
