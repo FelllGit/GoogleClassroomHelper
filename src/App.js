@@ -21,11 +21,11 @@ function App() {
         <>
             {user ? (
                 <BrowserRouter>
-                    <div className="h-screen flex">
-                        <div className="bg-gray-800 h-full flex-col">
+                    <div className="h-screen flex text-text">
+                        <div className="bg-background-front h-full flex-col">
                             <NavigationBar user={user} setUser={setUser}/>
                         </div>
-                        <div className="bg-gray-600 flex-1">
+                        <div className="bg-background-back flex-1">
                             <div>
                                 <Routes>
                                     <Route exact path="/" element={<Main />} />

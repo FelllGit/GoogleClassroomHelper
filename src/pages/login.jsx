@@ -33,8 +33,8 @@ const Login = ({ user, setUser }) => {
     };
 
     return (
-        <div class="flex h-screen justify-center items-center">
-            <form class="bg-white p-6 rounded-lg shadow-md">
+        <div class="bg-background-back text-text flex h-screen justify-center items-center">
+            <form class="bg-background-front p-6 rounded-lg shadow-md">
                 <h2 class="text-lg font-medium mb-4">Sign in</h2>
                 <div class="mb-4">
                     <label
@@ -70,7 +70,7 @@ const Login = ({ user, setUser }) => {
                 </div>
                 <div class="mb-4">
                     <button
-                        class="bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600"
+                        class="bg-buttons-accept text-white py-2 px-4 rounded-lg hover:bg-indigo-600"
                         type="button"
                         onClick={handleLogin}>
                         Sign in
