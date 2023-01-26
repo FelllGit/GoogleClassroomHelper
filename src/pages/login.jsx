@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import axios from "axios";
 
 import getUser from "../scripts/getUserInfo";
@@ -23,6 +23,10 @@ const Login = ({ user, setUser }) => {
     // Ініціалізувати стани для адреси електронної пошти та паролю
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    useEffect(() => {
+        document.title = 'Minecraft Revolution | Login';
+      }, []);
 
     // Обробник для входу
     const handleLogin = async () => {

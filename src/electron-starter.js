@@ -23,8 +23,10 @@ function createWindow() {
             contextIsolation: false,
             nodeIntegration: true,
             enableRemoteModule: true,
-        },
+        }
     });
+
+    mainWindow.setTitle("AAA");
 
     mainWindow.resizable = false;
 
