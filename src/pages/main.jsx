@@ -40,30 +40,36 @@ const Main = () => {
                     style={{ marginRight: `-${scrollPosition}px` }}
                     className="relative">
                     {reversedPosts.map(post => (
-                        <div key={post.id} className="post col-md-6 text-start">
-                            <div className=" container">
-                                <label className="text-lg font-bold mr-2">
-                                    {post.name}
-                                </label>
-                                <small className="date">
-                                    {new Date(post.created_at).toLocaleString(
-                                        "ua-UK",
-                                        options
-                                    )}
-                                </small>
-                            </div>
-                            <p className="description">{post.description}</p>
-                            <div id="manageButtons">
-                                <Link to={`/posts/${post.id}`}>
-                                    <button
-                                        type="button"
-                                        className="text-buttons-normal">
-                                        Подивитись повністю
-                                    </button>
-                                </Link>
+                        <>
+                            <div
+                                key={post.id}
+                                class="post bg-background-back hover:bg-background-front my-2 rounded">
+                                <div className="m-2">
+                                    <div className="container">
+                                        <label className="text-lg font-bold mr-2">
+                                            {post.name}
+                                        </label>
+                                        <small className="date">
+                                            {new Date(
+                                                post.created_at
+                                            ).toLocaleString("ua-UK", options)}
+                                        </small>
+                                    </div>
+                                    <p className="description">
+                                        {post.description}
+                                    </p>
+                                    <div id="manageButtons">
+                                        <a
+                                            href={`http://localhost:3000/posts/${post.id}`}
+                                            target="_blank"
+                                            className="text-buttons-normal">
+                                            Подивитись повністю
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                             <hr />
-                        </div>
+                        </>
                     ))}
                 </div>
                 <div
