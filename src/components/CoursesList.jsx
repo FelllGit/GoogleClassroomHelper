@@ -1,11 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
+const {remote} = require('electron')
+
 import conf from "./../configs/conf";
 
 const fs = window.require('fs');
 
-const token = JSON.parse(fs.readFileSync('./../confings/token.json'));
+const tokenPath = `${remote}/configs/token.json`;
+
+const token = JSON.parse(fs.readFileSync(tokenPath));
 
 function CourseList() {
     const [courseCovers, setCourseCovers] = useState({});
