@@ -7,7 +7,7 @@ function App() {
     return (
         <>
             <div>
-                <h1>Electron + ReactJS + Tailwind boilerplate</h1>
+                <h1 className="bg-white-200">Electron + ReactJS + Tailwind boilerplate</h1>
             </div>
         </>
     )
