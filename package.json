@@ -25,11 +25,6 @@
     "nf_start": "nf start",
     "dev": "npm-run-all -s build --parallel nf_start"
   },
-  "browser": {
-    "fs": false,
-    "os": false,
-    "path": false
-  },
   "eslintConfig": {
     "extends": [
       "react-app",
