@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 
 import conf from "./../configs/conf";
 
-function CourseList() {
-
+const CourseList = () => {
     return (
         <div>
             {conf.courses.map(course => (

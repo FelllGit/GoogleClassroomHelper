@@ -9,6 +9,9 @@ const BrowserWindow = electron.BrowserWindow;
 
 const path = require("path");
 const url = require("url");
+const fs = require("fs");
+const { google } = require("googleapis");
+const { OAuth2Client } = require("google-auth-library");
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -23,18 +26,20 @@ function createWindow() {
             contextIsolation: false,
             nodeIntegration: true,
             enableRemoteModule: true,
-        }
+        },
     });
 
     mainWindow.setTitle("AAA");
 
     mainWindow.resizable = false;
 
-    const startUrl = process.env.ELECTRON_START_URL || url.format({
-        pathname: path.join(__dirname, '/../build/index.html'),
-        protocol: 'file:',
-        slashes: true
-    });
+    const startUrl =
+        process.env.ELECTRON_START_URL ||
+        url.format({
+            pathname: path.join(__dirname, "/../build/index.html"),
+            protocol: "file:",
+            slashes: true,
+        });
 
     // and load the index.html of the app.
     mainWindow.loadURL(startUrl);
@@ -77,5 +82,17 @@ ipcMain.on("close-app", (event, lead) => {
     app.quit();
 });
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
+ipcMain.on("run-connect-script", (event, arg) => {
+    const { exec } = require("child_process");
+    const path = require("path");
+    const scriptPath = path.join(process.cwd(), "src", "scripts", "connect.py");
+
+    exec(`python3 "${scriptPath}"`, (error, stdout, stderr) => {
+        if (error) {
+            console.error(`exec error: ${error}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+        console.error(`stderr: ${stderr}`);
+    });
+});
